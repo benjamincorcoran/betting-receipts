@@ -125,10 +125,15 @@ h1 {
         display: none;
     }
 
+    body {
+        width: 100%;
+        max-width: 100%;
+        padding: 0px auto;
+    }
+
     .receipt {
-        position: absolute;
-        top: 0;
-        left: 0;
+        transform: scale(5);
+        transform-origin: 0% 0% 0px;
     }
 
     @page {
