@@ -162,7 +162,7 @@ h1 {
     width: 100%;
     left: 0;
     background: url(../img/rip.svg) bottom;
-    transform: scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
     background-size: 200%;
 }
 
