@@ -47,12 +47,13 @@ const updateReturn = function () {
     console.log([getRadio(), receiptOdds, stake, floatStake, floatOdds, expectedReturn])
     if (getRadio() == "each") {
         var winReturn = floatStake / 2 * floatOdds
-        var placeReturn = floatStake / 2 * floatOdds / 3
+        var placeReturn = floatStake / 2 * floatOdds / 3 + floatStake
         var expectedReturn = winReturn + placeReturn
         $(".placeReturn").text(gbpFormat.format(placeReturn))
     } else {
         var expectedReturn = floatStake * floatOdds
     }
+    expectedReturn = expectedReturn + floatStake
     console.log([getRadio(), receiptOdds, stake, floatStake, floatOdds, expectedReturn])
     $(".betReturnValue").text(gbpFormat.format(expectedReturn))
 
