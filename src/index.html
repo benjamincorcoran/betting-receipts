@@ -53,15 +53,17 @@
                     <input type="text" class="form-control" id="raceOdds" placeholder="5/2">
                 </div>
                 <div class="form-group">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="winEachWayRadio" id="winRadio" checked>
-                        <label class="form-check-label" for="winRadio">
+                    <div class="form-radio">
+                        <input class="form-radio-input" type="radio" name="winEachWayRadio" id="winRadio" value="win"
+                            checked>
+                        <label class="form-radio-label" for="winRadio">
                             Win
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="winEachWayRadio" id="eachWayRadio">
-                        <label class="form-check-label" for="eachWayRadio">
+                    <div class="form-radio">
+                        <input class="form-radio-input" type="radio" name="winEachWayRadio" id="eachWayRadio"
+                            value="each">
+                        <label class="form-radio-label" for="eachWayRadio">
                             Each Way
                         </label>
                     </div>
@@ -93,7 +95,7 @@
                     <div class="dashed_line"></div>
                 </div>
                 <div id="receipt_body"></div>
-                <div class="receiptBetType">To Win (<span class="receiptStake">£50.00</span>)
+                <div><span class="receiptBetType">To Win</span> (<span class="receiptStake">£50.00</span>)
                     <div class="receiptHorseOddsContainer">
                         <div class="receiptRaceHorse">1 Redrum</div>
                         <div class="receiptRaceOdds">5/2</div>
@@ -111,13 +113,17 @@
                     <div>BET RETURNS</div>
                     <div class="betReturnValue">£175.00</div>
                 </div>
+                <div class="placeReturnSection">
+                    <div>PLACE RETURNS @ 1/3</div>
+                    <div class="placeReturn">£0.00</div>
+                </div>
                 <div class="asterix_line"></div>
                 <div id="receipt_footter">
                     <div class="barcode">
-                        FuckYouCunt
+                        FuckOff
                     </div>
                     Till: 1<br>
-                    TC#: 34233553234455<br>
+                    TC#: <span id="transactionNumber">34233553234455</span><br>
                     <span class="dateTime">Date & Time: <span class="date">18/03/2023</span> 12:00</span><br><br>
                     You were served by David<br><br>
                     <div class="center_text">***Customer Copy***</div><br>

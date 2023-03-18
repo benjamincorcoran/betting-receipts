@@ -106,6 +106,13 @@ h1 {
     line-height: 95%;
 }
 
+.placeReturnSection {
+    display: flex;
+    justify-content: space-between;
+    font-size: 7px;
+    display: None;
+}
+
 .barcode {
     font-family: "Libre Barcode 39";
     font-size: 25px;
