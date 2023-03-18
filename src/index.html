@@ -10,6 +10,9 @@
 
     <link rel="stylesheet" href="./assets/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Libre Barcode 39' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+        integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -72,7 +75,9 @@
                     <label for="stake">Stake (£):</label>
                     <input type="number" class="form-control" id="stake" placeholder="50">
                 </div>
-                <button type="submit" class="btn btn-primary" onclick="window.print()">Print</button>
+                <button type="button" class="btn btn-primary" onclick="window.print()">Print</button>
+                <button type="button" class="btn btn-primary" onclick="getQRCode()" data-toggle="modal"
+                    data-target="#exampleModal">Generate QR</button>
             </form>
         </div>
         <div id="_receipt">
@@ -106,7 +111,7 @@
                 </div>
                 <div class="dashed_line"></div>
                 <div class="right_text">
-                    Total Stake: <span class="receiptStake">£50.00</span>
+                    Total Outlay: <span class="totalOutlay">£50.00</span>
                 </div>
                 <div class="asterix_line"></div>
                 <div class="betReturnsSection">
@@ -128,6 +133,22 @@
                     You were served by David<br><br>
                     <div class="center_text">***Customer Copy***</div><br>
                     Please check your ticket before leaving the till. All wagers are final.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">QR Code</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="qrcode_container">
+                    <div id="qrcode"></div>
                 </div>
             </div>
         </div>

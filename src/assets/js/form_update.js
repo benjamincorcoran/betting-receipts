@@ -46,17 +46,42 @@ const updateReturn = function () {
     var floatOdds = eval(receiptOdds.replace(":", "/"));
     console.log([getRadio(), receiptOdds, stake, floatStake, floatOdds, expectedReturn])
     if (getRadio() == "each") {
-        var winReturn = floatStake / 2 * floatOdds
-        var placeReturn = floatStake / 2 * floatOdds / 3 + floatStake
+        var winReturn = floatStake * floatOdds
+        var placeReturn = floatStake * floatOdds / 3 + floatStake
         var expectedReturn = winReturn + placeReturn
         $(".placeReturn").text(gbpFormat.format(placeReturn))
+        $(".totalOutlay").text(gbpFormat.format(floatStake * 2))
     } else {
         var expectedReturn = floatStake * floatOdds
+        $(".totalOutlay").text(gbpFormat.format(floatStake))
     }
     expectedReturn = expectedReturn + floatStake
     console.log([getRadio(), receiptOdds, stake, floatStake, floatOdds, expectedReturn])
     $(".betReturnValue").text(gbpFormat.format(expectedReturn))
 
+}
+
+const getQRCode = function (qrcode) {
+    var receiptData = {
+        "date": $(".date").first().text(),
+        "receiptBetType": $(".receiptBetType").first().text(),
+        "receiptRaceName": $(".receiptRaceName").first().text(),
+        "receiptRaceTime": $(".receiptRaceTime").first().text(),
+        "receiptRaceHorse": $(".receiptRaceHorse").first().text(),
+        "receiptRaceOdds": $(".receiptRaceOdds").first().text(),
+        "receiptStake": $(".receiptStake").first().text(),
+        "betReturnValue": $(".betReturnValue").first().text(),
+        "placeReturn": $(".placeReturn").first().text(),
+        "totalOutlay": $(".totalOutlay").first().text()
+    }
+    var base64 = btoa(jQuery.param(receiptData))
+    var urlData = window.location.href.split('?')[0].replace('index.html', '') + 'receipt.html?data=' + base64;
+    console.log(urlData)
+    $("#qrcode").empty()
+    var qrcode = new QRCode(document.getElementById("qrcode"), urlData)
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    })
 }
 
 $(document).ready(function () {

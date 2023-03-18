@@ -1,7 +1,18 @@
-body {
+body,
+.modal-content {
     padding: 2% 5%;
     background-color: #121212 !important;
     color: white !important;
+}
+
+#qrcode {
+    margin: 5px;
+}
+
+#qrcode_container {
+    margin: 5px auto;
+    background-color: white !important;
+    text-align: center
 }
 
 input {
