@@ -78,6 +78,8 @@ const getQRCode = function (qrcode) {
     var urlData = window.location.href.split('?')[0].replace('index.html', '') + 'receipt.html?data=' + base64;
     console.log(urlData)
     $("#qrcode").empty()
+    $("#receiptURL").text("Open");
+    $("#receiptURL").attr("href", urlData);
     var qrcode = new QRCode(document.getElementById("qrcode"), urlData)
     $('#myModal').on('shown.bs.modal', function () {
         $('#myInput').trigger('focus')

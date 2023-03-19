@@ -34,8 +34,10 @@ button {
 }
 
 #form_section {
-    width: 50%;
+    max-width: 350px;
+    width: 100%;
     margin-right: 10%;
+    margin-bottom: 10%;
 }
 
 h1 {
@@ -44,8 +46,8 @@ h1 {
 
 .flex-container {
     display: flex;
+    flex-flow: row wrap;
     justify-content: flex-start;
-    width: 70%;
 }
 
 .receiptHorseOddsContainer {
@@ -61,7 +63,7 @@ h1 {
 .receipt {
     background-color: #fbfbf8;
     color: black;
-    width: 155px;
+    /* width: 155px; */
     max-width: 155px;
     font-family: monospace;
     font-size: 7px;

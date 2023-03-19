@@ -41,7 +41,7 @@
             <form>
                 <div class="form-group">
                     <label for="raceName">Race Location:</label>
-                    <input type="text" class="form-control" id="raceName" placeholder="Cheltenham Gold Cup">
+                    <input type="text" class="form-control" id="raceName" placeholder="The Willows Steeplechase">
                 </div>
                 <div class="form-group">
                     <label for="raceTime">Race Time:</label>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="form-group">
                     <label for="odds">Odds:</label>
-                    <input type="text" class="form-control" id="raceOdds" placeholder="5/2">
+                    <input type="text" class="form-control" id="raceOdds" placeholder="10/1">
                 </div>
                 <div class="form-group">
                     <div class="form-radio">
@@ -100,18 +100,18 @@
                     <div class="dashed_line"></div>
                 </div>
                 <div id="receipt_body"></div>
-                <div><span class="receiptBetType">To Win</span> (<span class="receiptStake">£50.00</span>)
+                <div><span class="receiptBetType">To Win</span> (<span class="receiptStake">£5.00</span>)
                     <div class="receiptHorseOddsContainer">
                         <div class="receiptRaceHorse">1 Redrum</div>
-                        <div class="receiptRaceOdds">5/2</div>
+                        <div class="receiptRaceOdds">10/1</div>
                     </div>
-                    <div class="receiptRaceName receiptRaceInfo">Cheltenham Gold Cup</div>
+                    <div class="receiptRaceName receiptRaceInfo">The Willows Steeplechase</div>
                     <div class="receiptRaceInfo"><span class="date">18/03/2023</span> <span
                             class="receiptRaceTime">12:00</span></div>
                 </div>
                 <div class="dashed_line"></div>
                 <div class="right_text">
-                    Total Outlay: <span class="totalOutlay">£50.00</span>
+                    Total Outlay: <span class="totalOutlay">£5.00</span>
                 </div>
                 <div class="asterix_line"></div>
                 <div class="betReturnsSection">
@@ -149,6 +149,10 @@
                 </div>
                 <div id="qrcode_container">
                     <div id="qrcode"></div>
+                    <div>
+                        <h6>Sharing Link</h6>
+                        <a id="receiptURL" href=""></a>
+                    </div>
                 </div>
             </div>
         </div>
